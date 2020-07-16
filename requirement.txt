@@ -1,26 +1,16 @@
-需要配置的环境
-python >= 3.6
-Django == 3.0.6
-node.js
+# python == 3.6
+# Django == 3.0.6
 
-node.js的安装可以看这一篇教程：https://www.runoob.com/nodejs/nodejs-install-setup.html
-
-# pip install django==3.0.6
-# pip install pymysql
 # pip install django-cors-headers
-
-npm的指令需要在moviefront目录下进行
 # npm install webpack webpack-dev-server webpack-cli --save-dev
 # npm install axios --save
 # npm install echarts --save
 
-在根目录下，启动后端
+#在根目录下，启动后端
 # python manage.py runserver 0.0.0.0:8888
-需要注意的是，若计算机名称为中文，在启动时会出现错误，修改方式可以参考此网页：https://jingyan.baidu.com/article/335530da56126919cb41c330.html
-在moviefront目录下，启动前端
+# python manage.py migrate --fake <appname>
+#在moviefront目录下，启动前端
 # npm run dev
-
 默认端口10016
 
-访问
 http://localhost:10016/#/login
