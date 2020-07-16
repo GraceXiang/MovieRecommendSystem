@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  style="background-color: #303133">
     <el-card v-if="isShow" class="moviecard">
       <img src="http://www.pqdong.com/wp-content/uploads/2020/03/tip-img.png">
       <p>啊哦，您寻找的演员信息已经被删除了！</p>
@@ -9,18 +9,18 @@
         <img :src="person.avatar" class="avatar">
         <div class="introduce">
           <p class="title">{{person.name}}</p>
-          <p>性别：{{person.sex}}</p>
-          <p>出生日期：{{person.birth}}</p>
-          <p>出生地：{{person.birthPlace}}</p>
+          <p><span style="font-weight: bolder">性别：</span>{{person.sex}}</p>
+          <p><span style="font-weight: bolder">出生日期：</span>{{person.birth}}</p>
+          <p><span style="font-weight: bolder">出生地：</span>{{person.birthPlace}}</p>
         </div>
       </el-card>
       <el-card class="moviecard">
         <div class="movieintroduce">演员简介</div>
         <div class="movieintroducet">
-          <p>星座：{{person.constellation}}</p>
-          <p>中文别名：{{person.nameZn}}</p>
-          <p>英文别名：{{person.nameEn}}</p>
-          <p>职业：{{person.profession}}</p>
+          <p><span style="font-weight: bolder">星座：</span>{{person.constellation}}</p>
+          <p><span style="font-weight: bolder">中文别名：</span>{{person.nameZn}}</p>
+          <p><span style="font-weight: bolder">英文别名：</span>{{person.nameEn}}</p>
+          <p><span style="font-weight: bolder">职业：</span>{{person.profession}}</p>
         </div>
       </el-card>
       <el-card class="moviecard" v-show="person.biography">
@@ -40,9 +40,9 @@
                 <img :src=item.cover height="75" width="75">
               </div>
               <div>
-                <p style="white-space: pre-wrap;">名称：{{item.name}}</p>
-                <p style="margin-top:10px">标签：{{item.tags}}</p>
-                <p style="margin-top:10px">评分：{{item.score}}</p>
+                <p style="white-space: pre-wrap;"><span style="font-weight: bolder">名称：</span>{{item.name}}</p>
+                <p style="margin-top:10px"><span style="font-weight: bolder">标签：</span>{{item.tags}}</p>
+                <p style="margin-top:10px"><span style="font-weight: bolder">评分：</span>{{item.score}}</p>
               </div>
             </div>
           </div>
@@ -174,7 +174,9 @@ export default {
   }
 
   .movieintroduce {
-    border-left: 5px solid #888;
+    border-left: 20px solid #888;
+    font-size: larger;
+    font-weight: bolder;
     text-align: left;
     padding-left: 8px;
   }

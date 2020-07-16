@@ -1,21 +1,21 @@
 <template>
-  <div>
-    <div class="divisionx"><h3>筛选电影</h3>
+  <div  style="background-color: #303133">
+    <div class="divisionx-movielist"><span  style="font-size: 23px;font-weight: bolder;color: white">筛选电影:</span>
 <!--      Tags:[['剧情'],['战争'],['动画'],['历史'],['冒险'],['奇幻'],['传记'],['歌舞'],['动作'],['科幻'],['爱情'],['喜剧'],['惊悚'],['犯罪']],-->
-      <el-button style="margin-top: 10px" @click="selectTag('剧情')" :disabled="this.tags.indexOf('剧情')!==-1">剧情</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('战争')" :disabled="this.tags.indexOf('战争')!==-1">战争</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('动画')" :disabled="this.tags.indexOf('动画')!==-1">动画</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('历史')" :disabled="this.tags.indexOf('历史')!==-1">历史</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('冒险')" :disabled="this.tags.indexOf('冒险')!==-1">冒险</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('奇幻')" :disabled="this.tags.indexOf('奇幻')!==-1">奇幻</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('传记')" :disabled="this.tags.indexOf('传记')!==-1">传记</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('歌舞')" :disabled="this.tags.indexOf('歌舞')!==-1">歌舞</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('动作')" :disabled="this.tags.indexOf('动作')!==-1">动作</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('科幻')" :disabled="this.tags.indexOf('科幻')!==-1">科幻</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('爱情')" :disabled="this.tags.indexOf('爱情')!==-1">爱情</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('惊悚')" :disabled="this.tags.indexOf('惊悚')!==-1">惊悚</el-button>
-      <el-button style="margin-top: 10px" @click="selectTag('犯罪')" :disabled="this.tags.indexOf('犯罪')!==-1">犯罪</el-button>
-      <el-button type="primary" style="margin-top: 10px" @click="resetTag()" plain>重置</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('剧情')" :disabled="this.tags.indexOf('剧情')!==-1">剧情</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('战争')" :disabled="this.tags.indexOf('战争')!==-1">战争</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('动画')" :disabled="this.tags.indexOf('动画')!==-1">动画</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('历史')" :disabled="this.tags.indexOf('历史')!==-1">历史</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('冒险')" :disabled="this.tags.indexOf('冒险')!==-1">冒险</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('奇幻')" :disabled="this.tags.indexOf('奇幻')!==-1">奇幻</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('传记')" :disabled="this.tags.indexOf('传记')!==-1">传记</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('歌舞')" :disabled="this.tags.indexOf('歌舞')!==-1">歌舞</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('动作')" :disabled="this.tags.indexOf('动作')!==-1">动作</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('科幻')" :disabled="this.tags.indexOf('科幻')!==-1">科幻</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('爱情')" :disabled="this.tags.indexOf('爱情')!==-1">爱情</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('惊悚')" :disabled="this.tags.indexOf('惊悚')!==-1">惊悚</el-button>
+      <el-button style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="selectTag('犯罪')" :disabled="this.tags.indexOf('犯罪')!==-1">犯罪</el-button>
+      <el-button type="primary" style="margin-top: 10px;border-radius: 20px;font-weight: bolder" @click="resetTag()" plain>重置</el-button>
     </div>
     <div class="cardContain">
       <div class="wrapper-card">
@@ -289,7 +289,7 @@ export default {
     border-radius: 6px;
   }
 
-  .divisionx {
+  .divisionx-movielist {
     width: 90%;
     margin: 10px auto;
     text-align: left;

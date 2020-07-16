@@ -1,9 +1,8 @@
 <template>
   <!--演员资源-->
-  <div>
+  <div  style="background-color: #303133">
     <div class="division">
-      <h3>演员资源</h3>
-      <h3 style="color: #888;font-weight: 400">--- PERSONS ---</h3>
+      <h3 style="color: white">--- 演员资源 ---</h3>
     </div>
     <div class="newsContain">
       <div class="temp">
@@ -259,6 +258,7 @@ export default {
 
   .division {
     width: 100%;
+    color: white;
     margin: 10px auto;
     text-align: center;
     padding-left: 10px;
