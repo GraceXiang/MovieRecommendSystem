@@ -19,7 +19,7 @@ conn=pymysql.connect(
     host='127.0.0.1',
     port=3306,
     user='root',
-    password='tian',
+    password='120114',
     db='rec_movie',
     charset='utf8'
 )
