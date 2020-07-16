@@ -52,6 +52,8 @@ def find(request):
     return render(request, 'moviefront/test.html', {'List':arr})
 
 def userRegister(request):
+    print("############################")
+    print("userRegister")
     u_id = request.POST.get('u_id', '')
     u_passwd = request.POST.get('u_passwd', '')
     if exist_user(u_id):
@@ -63,10 +65,13 @@ def userRegister(request):
     return JsonResponse({'code':1})
 
 def userLogin(request):
+    print("############################")
+    print("userLogin")
     u_id = request.POST.get('u_id', '')
     u_passwd = request.POST.get('u_passwd', '')
     u_list = User.objects.filter(u_id=u_id,u_passwd=u_passwd)
-
+    print(u_id)
+    print(u_passwd)
     if exist_user(u_id)==False:
         messages.error(request,'用户id不存在！')
         return JsonResponse({'code':0})
@@ -77,6 +82,8 @@ def userLogin(request):
         return JsonResponse({'code':0})
 
 def getUserInfo(request):
+    print("############################")
+    print("getUserInfo")
     u_id = request.GET.get('u_id', '')
     u_list = User.objects.filter(u_id=u_id)
     u_list = serializers.serialize("json", u_list)
@@ -95,7 +102,7 @@ def getUserMovie(request):
         host='127.0.0.1',
         port=3306,
         user='root',
-        password='',
+        password='120114',
         db='rec_movie',
         charset='utf8'
     )

@@ -14,9 +14,10 @@ from bs4 import BeautifulSoup
 from lxml.html import etree
 import pymysql
 import itertools
+import logging
+import logging.handlers
+from log import logger
 
-from log import getLog
-logger = getLog()
 
 headers = {
     'User-Agent':

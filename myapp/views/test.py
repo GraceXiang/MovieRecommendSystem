@@ -1,11 +1,12 @@
-from myapp.models import *
-from django.shortcuts import HttpResponse
 from django.shortcuts import render
+from django.shortcuts import redirect
+from myapp.models import *
 from django.http import JsonResponse
-from django.contrib import messages
 from django.core import serializers
 
-def getRecommendMovieByMid(request):
+def test(request):
+    m_id = request.GET.get('m_id')
+    print(m_id)
     m_id = '10047547'
     rec_list = RecommendMovie.objects.filter(m_id=m_id)
 
@@ -16,4 +17,3 @@ def getRecommendMovieByMid(request):
         return JsonResponse({'code': 1, 'rec_list': rec_list})
     else:
         return JsonResponse({'code': 0})
-

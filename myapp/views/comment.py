@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib import messages
 from django.core import serializers
+from log import getLog
 
 
 def getCommentById(request):
@@ -50,6 +51,9 @@ def addComment(request):
     id = len(Comment.objects.all())
     u_id = request.POST.get('u_id', '')
     m_id = request.POST.get('m_id', '')
+    print("1")
+    logger = getLog()
+    logger.info(int(m_id))
     content = request.POST.get('content', '')
     if u_id == '' or m_id == '' or content == '':
         return JsonResponse({'code': 0})
