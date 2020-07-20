@@ -8,7 +8,7 @@ import pymysql
 conn = pymysql.connect(host="localhost",
                        port=3306,
                        user="root",
-                       password="",
+                       password="120114",
                        database="rec_movie",
                        charset="utf8")
 cursor = conn.cursor()
@@ -38,6 +38,8 @@ class api():
                 movie_id = str(ret1[0][1])
                 print("test:"+movie_id)
 
+                # sql2 = "select m_id,recommend_movie_id from recommend_movie where recommend_movie.m_id= %s"
+                # cursor.execute(sql2,(movie_id))
                 sql2 = "select m_id,recommend_movie_id from recommend_movie where recommend_movie.m_id="+movie_id
                 cursor.execute(sql2)
                 ret2 = cursor.fetchall()
