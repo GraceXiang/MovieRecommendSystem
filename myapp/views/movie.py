@@ -16,8 +16,17 @@ import pymysql
 import itertools
 import logging
 import logging.handlers
-from log import logger
+import time
+from log import log_file
 
+# def log_file(id):
+#     now = time.time()
+#     local_time = time.localtime(now)
+#     filename = time.strftime('%Y-%m-%d %H-%M-%S', local_time)
+#     date_format_localtime = time.strftime('%Y-%m-%d %H:%M:%S', local_time)
+#     print("log:"+id)
+#     with open('E:\\Desktop\\MovieRecommendationSystem\\log\\logfile\\' + filename + '.txt', mode='a', encoding='utf-8') as file:
+#         file.write(date_format_localtime+","+str(id))
 
 headers = {
     'User-Agent':
@@ -131,7 +140,7 @@ def getMovieById(request):
     id = request.GET.get('id', '')
     print(id)
     print(type(id))
-    logger.info(int(id))
+    log_file(id)
     m_list = Movie.objects.filter(m_id=id)
     if len(m_list) == 0:
         messages.error(request, '电影不存在！')
@@ -283,6 +292,7 @@ def getRecommendMovie(request):
     print(type)
     print(m_id)
     print(count)
+    # log_file(m_id)
     mid_list = RecommendMovie.objects.filter(m_id=m_id)[0].recommend_movie_id
     mid_list = mid_list.split(',')
 
@@ -520,7 +530,7 @@ def getRecommendUser(request):
                 "id":
                 cursor.fetchone()[0],
                 "cover":
-                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591101463644&di=daef4332c69b69a30c1aafdeb57291e4&imgtype=0&src=http%3A%2F%2Fpic.soutu123.cn%2Felement_origin_min_pic%2F01%2F37%2F09%2F22573c3a831082c.jpg%2521%2Ffw%2F700%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue'
+                'http://m.imeitou.com/uploads/allimg/2019022710/ayk4dr5gkvi.jpg'
             })
     # 关闭游标
     cursor.close()
@@ -539,9 +549,11 @@ def updateMovieScore(request):
     print("votes:"+votes)
     print("score:"+score)
     score=float(score)
-    score=round(score,1)
+    score=round(score,3)
     print(score)
-    logger.info(int(m_id))
+    score=int(score*10)
+    print(score)
+    log_file(m_id)
     # 建立数据库连接
     conn = pymysql.connect(host='127.0.0.1',
                            port=3306,
@@ -554,7 +566,7 @@ def updateMovieScore(request):
     sql1 = 'UPDATE movie SET rate= %s WHERE m_id = %s'
     # rows = cursor.execute(sql1, (score * 10, m_id))
     try:
-        cursor.execute(sql1, (score * 10, m_id))
+        cursor.execute(sql1, (score , m_id))
         conn.commit()
     except:
         # 如果发生错误则回滚

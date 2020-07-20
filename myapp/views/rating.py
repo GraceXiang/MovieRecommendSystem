@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.contrib import messages
 from django.core import serializers
 
-from log import getLog
+from log import log_file
 
 
 
@@ -55,8 +55,7 @@ def addRating(request):
     m_id = request.POST.get('m_id', '')
     type = request.POST.get('type', '')
     rate = request.POST.get('rate', '')
-    logger = getLog()
-    logger.info(int(m_id))
+    log_file(m_id)
     if u_id == '' or m_id == '' or rate == '':
         return JsonResponse({'code': 0})
     Rating.objects.create(id=id, u_id=u_id, m_id=m_id, type=type, content=rate)
