@@ -24,7 +24,7 @@
     "element-ui": "^2.9.1",
     "epic-spinners": "^1.0.3",
     "js-base64": "^2.4.5",
-    "qs": "^6.5.1",
+    "qs": "^6.9.7",
     "sortablejs": "^1.10.0-rc3",
     "vue": "^2.6.11",
     "vue-router": "^3.0.1",
